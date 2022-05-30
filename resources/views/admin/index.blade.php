@@ -11,7 +11,7 @@
         <div class="row">
             <h1>List of Post </h1>
             <div class="col-12">
-                <a href="{{route('andim.posts.create')}}" class="btn btn-warning">Crea Post</a>
+                <a href="{{route('andim.posts.create')}}" class="btn btn-warning mb-4">Crea Post</a>
             </div>
             <div class="col-12 d-flex flex-wrap">
                 @foreach ($posts as $post)
@@ -23,7 +23,12 @@
 
                                 @endforeach
                             </div>
+                            @if (str_starts_with($post->image_url, 'https://') || str_starts_with($post->image_url, 'http://'))
                             <img src="{{$post->image_url}}" class="card-img-top" alt="{{$post->title}}">
+                        @else
+                            <img src="{{asset('/storage') . '/' .  $post->image_url}}" class="card-img-top" alt="{{$post->title}}">
+                        @endif
+
                             <div class="card-body">
                                 <h5 class="card-title text-capitalize">{{$post->title}}</h5>
                                 <h6 class="card-title">{{$post->author}}</h6>

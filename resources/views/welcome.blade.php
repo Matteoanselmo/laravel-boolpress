@@ -19,6 +19,7 @@
                         <div class="top-right links">
                             @auth
                                 <a href="{{ url('/home') }}">Home</a>
+                                <a href="{{ route('andim.posts.index') }}">Log Post</a>
                             @else
                                 <a href="{{ route('login') }}">Login</a>
 
