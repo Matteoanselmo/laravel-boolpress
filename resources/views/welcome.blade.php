@@ -20,6 +20,7 @@
                             @auth
                                 <a href="{{ url('/home') }}">Home</a>
                                 <a href="{{ route('andim.posts.index') }}">Log Post</a>
+                                <a href="{{route('contacts.contact')}}">Contattaci</a>
                             @else
                                 <a href="{{ route('login') }}">Login</a>
 
